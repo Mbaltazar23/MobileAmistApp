@@ -4,27 +4,27 @@
     "slug": "AmistAppMovil",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/AmistAppIcon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/AmistAppIcon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mbaltazar.AmistAppMovil"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/AmistAppIcon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.mbaltazar.AmistAppMovil"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/AmistAppIcon.png"
     }
   }
 }
