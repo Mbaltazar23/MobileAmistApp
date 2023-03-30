@@ -29,7 +29,7 @@ export const ChangePasswordScreen = () => {
   }, [errorMessage]);
 
   useEffect(() => {
-    if (user?.id !== null && user?.id !== undefined) {
+    if (user?.id !== null && user?.id !== undefined  && user?.id !== "") {
       const role = user.roles[0]?.role; // Accede al primer objeto del arreglo "roles" y obtiene el valor de "role"
       if (role === "Alumno") {
         // Verifica si el valor de "role" es "Alumno"

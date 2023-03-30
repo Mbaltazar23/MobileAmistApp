@@ -1,8 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { LoginAuthUseCase } from "../../../Domain/useCases/auth/LoginAuth";
-import { SaveUserLocalUseCase } from "../../../Domain/useCases/userLocal/SaveUserLocal";
-import { useUserLocal } from "../../hooks/useUserLocal";
+import { UserConext } from "../../context/UserContext";
 
 const HomeViewModel = () => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -10,7 +9,9 @@ const HomeViewModel = () => {
     dni: "",
     password: "",
   });
-  const { user, getUserSession } = useUserLocal();
+
+  //const { user, getUserSession } = useUserLocal();
+  const { user, saveUserSesion } = useContext(UserConext);
   console.log("Usuario en Sesion : " + JSON.stringify(user));
 
   const login = async () => {
@@ -20,8 +21,7 @@ const HomeViewModel = () => {
       if (!response.status) {
         setErrorMessage(response.msg);
       } else {
-        await SaveUserLocalUseCase(response.data);
-        getUserSession();
+        saveUserSesion(response.data);
       }
     }
   };
@@ -51,16 +51,14 @@ const HomeViewModel = () => {
     setValues({ ...values, [property]: value });
   };
 
-
   return {
     ...values,
     user,
     onChange,
     errorMessage,
     login,
-    removeEmailReset
+    removeEmailReset,
   };
 };
-
 
 export default HomeViewModel;

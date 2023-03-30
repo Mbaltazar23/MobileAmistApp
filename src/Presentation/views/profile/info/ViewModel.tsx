@@ -1,13 +1,13 @@
-import React from "react";
-import { RemoveUserLocalUseCase } from "../../../../Domain/useCases/userLocal/RemoveUserLocal";
+import React, { useContext } from "react";
+import { UserConext } from "../../../context/UserContext";
 
 const ProfileInfoViewModel = () => {
-  const removeSession = async () => {
-    await RemoveUserLocalUseCase();
-  };
+  //const { user } = useUserLocal();
+  const { user, removeUserSession } = useContext(UserConext);
+
   return {
-    removeSession,
+    removeUserSession,
+    user,
   };
 };
-
 export default ProfileInfoViewModel;

@@ -3,6 +3,7 @@ import { UserLocalRepository } from "../../Domain/repositories/UserLocalReposito
 import { LocalStorage } from "../sources/local/LocalStorage";
 
 export class UserLocalRepositoryImp implements UserLocalRepository {
+  
   async save(user: User): Promise<void> {
     const { save } = LocalStorage();
     await save("user", JSON.stringify(user));
@@ -15,7 +16,7 @@ export class UserLocalRepositoryImp implements UserLocalRepository {
     return user;
   }
   
-   async remove(): Promise<void> {
+  async remove(): Promise<void> {
     const { remove } = LocalStorage();
     await remove("user");
   }

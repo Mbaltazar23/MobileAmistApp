@@ -1,8 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { ChangePasswordAuthUseCase } from "../../../Domain/useCases/auth/ChangePasswordAuth";
-import { SaveUserLocalUseCase } from "../../../Domain/useCases/userLocal/SaveUserLocal";
-import { useUserLocal } from "../../hooks/useUserLocal";
+
+import { UserConext } from "../../context/UserContext";
 
 const ChangePasswordViewModel = () => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -11,7 +11,7 @@ const ChangePasswordViewModel = () => {
     password02: "",
   });
 
-  const { user, getUserSession } = useUserLocal();
+  const { user, saveUserSesion } = useContext(UserConext);
   console.log("Usuario en Sesion : " + JSON.stringify(user));
 
   const onChange = (property: string, value: any) => {
@@ -31,8 +31,7 @@ const ChangePasswordViewModel = () => {
         if (!response.status) {
           setErrorMessage(response.msg);
         } else {
-          await SaveUserLocalUseCase(response.data);
-          getUserSession();
+          saveUserSesion(response.data);
         }
       }
     }

@@ -30,7 +30,6 @@ export const ResetPasswordScreen = ({ navigation, route }: Props) => {
     if (emailRest !== "") {
       navigation.replace("ChangePasswordScreen");
       console.log(emailRest);
-      
     }
   }, [emailRest]);
 
