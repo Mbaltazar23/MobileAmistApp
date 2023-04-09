@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "AmistAppMovil",
+    "name": "Amist App",
     "slug": "AmistAppMovil",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -18,8 +18,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.mbaltazar.AmistAppMovil"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
