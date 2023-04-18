@@ -21,6 +21,9 @@
       "supportsTablet": true
     },
     "android": {
+	  "StatusBar": {
+	    "translucent": true
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/AmistAppIcon.png",
         "backgroundColor": "#ffffff"

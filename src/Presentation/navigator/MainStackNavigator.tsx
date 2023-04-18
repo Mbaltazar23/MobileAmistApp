@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
 import { HomeScreen } from "../views/home/Home";
 import { ResetPasswordScreen } from "../views/password/ResetPassword";
 import { ChangePasswordScreen } from "../views/reset/ChangePassword";
@@ -57,7 +58,7 @@ export const MainStackNavigator = () => {
           component={ProfileUpdateScreen}
           options={{
             headerShown: true,
-            title: "Actualizar usuario",
+            title: "Actualizar informacion",
           }}
         />
       </Stack.Navigator>

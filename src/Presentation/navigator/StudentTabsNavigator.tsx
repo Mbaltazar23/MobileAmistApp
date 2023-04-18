@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image } from "react-native";
 import { ProfileInfoScreen } from "../views/profile/info/ProfileInfo";
 import { StudentBannerListScreen } from "../views/student/banner/list/BannerList";
-import { StudentCatalogueListScreen } from "../views/student/catalogue/list/CatalogueList";
+import { StudentStackNavigator } from "./StudentStackNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,10 +25,11 @@ export const StudentTabsNavigator = () => {
       />
 
       <Tab.Screen
-        name="StudentCatalogueListScreen"
-        component={StudentCatalogueListScreen}
+        name="StudentStackNavigator"
+        component={StudentStackNavigator}
         options={{
           title: "Catalogo",
+          headerShown: false,
           tabBarLabel: "Catalogo",
           tabBarIcon: ({ color }) => (
             <Image

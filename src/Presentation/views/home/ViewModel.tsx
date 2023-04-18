@@ -12,12 +12,12 @@ const HomeViewModel = () => {
 
   //const { user, getUserSession } = useUserLocal();
   const { user, saveUserSesion } = useContext(UserConext);
-  //console.log("Usuario en Sesion : " + JSON.stringify(user));
+  console.log("Usuario en Sesion : " + JSON.stringify(user));
 
   const login = async () => {
     if (isValidForm()) {
       const response = await LoginAuthUseCase(values.dni, values.password);
-      //console.log("response : " + JSON.stringify(response));
+      console.log("response : " + JSON.stringify(response));
       if (!response.status) {
         setErrorMessage(response.msg);
       } else {

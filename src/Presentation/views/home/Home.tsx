@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { StackScreenProps } from "@react-navigation/stack";
 import { RoundedButton } from "../../components/RoundedButton";
-import { RootStackParamList } from "../../../../App";
+import { RootStackParamList } from "../../navigator/MainStackNavigator";
 import DNIInput from "../../components/DniInput";
 import useViewModel from "./ViewModel";
 import { CustomTextInput } from "../../components/CustomTextInput";

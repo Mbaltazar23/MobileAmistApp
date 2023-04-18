@@ -36,4 +36,5 @@ ApiAmistAppWithImage.interceptors.request.use(async (config) => {
   }
   return config;
 });
+
 export { ApiAmistApp, ApiAmistAppWithImage };

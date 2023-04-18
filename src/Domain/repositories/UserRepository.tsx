@@ -3,4 +3,5 @@ import { User } from "../entities/User";
 
 export interface UserRepository {
   update(user: User): Promise<ResponseApiAmistApp>;
+  getStudentsForTeacherAsigned(): Promise<User[]>
 }
